@@ -1,0 +1,4 @@
+Stage: hardening
+Focus: command routing sync
+Gate: validated
+Updated: 2026-04-08

@@ -1,0 +1,32 @@
+{
+  "allow": [
+    "git status",
+    "git diff",
+    "git log",
+    "git branch",
+    "rg",
+    "sed",
+    "pytest",
+    "bash scripts/validate_studio.sh"
+  ],
+  "deny": [
+    "rm -rf",
+    "git reset --hard",
+    "git push --force",
+    "direct secret access",
+    "writing outside the current repo without explicit approval"
+  ],
+  "hooks": {
+    "SessionStart": ".claude/hooks/session-start.sh",
+    "PreToolUse": ".claude/hooks/pre-tool-use.sh",
+    "PostToolUse": ".claude/hooks/post-tool-use.sh",
+    "PreCompact": ".claude/hooks/pre-compact.sh",
+    "Stop": ".claude/hooks/stop.sh",
+    "SubagentStart": ".claude/hooks/subagent-start.sh"
+  },
+  "notes": [
+    "This is a Codex-facing mirror of the studio runtime policy.",
+    "The source of truth remains the runtime/ and production/ directories.",
+    "The .claude/hooks scripts are mirrors that point back to the canonical runtime docs."
+  ]
+}

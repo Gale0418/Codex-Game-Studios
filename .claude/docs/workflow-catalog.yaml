@@ -1,0 +1,93 @@
+version: 1
+source_of_truth:
+  commands: commands/index.md
+  workflows: references/workflow-playbooks.md
+  routing: runtime/dispatch-manifest.md
+categories:
+  onboarding_navigation:
+    - start
+    - help
+    - project-stage-detect
+    - adopt
+    - onboard
+    - setup-engine
+  game_design:
+    - quick-design
+    - brainstorm
+    - design-system
+    - design-systems
+    - map-systems
+    - propagate-design-change
+    - review-all-gdds
+  art_assets:
+    - art-bible
+    - asset-spec
+    - asset-audit
+  ux_interface:
+    - ux-design
+    - ux-review
+    - team-ui
+  architecture:
+    - architecture-decision
+    - architecture-review
+    - create-architecture
+    - create-control-manifest
+    - tech-debt
+  stories_sprints:
+    - create-epics
+    - create-stories
+    - dev-story
+    - estimate
+    - sprint-plan
+    - sprint-status
+    - story-readiness
+    - story-done
+  reviews_analysis:
+    - design-review
+    - code-review
+    - perf-profile
+    - balance-check
+    - consistency-check
+    - reverse-document
+  qa_testing:
+    - qa-plan
+    - smoke-check
+    - regression-suite
+    - soak-test
+    - test-setup
+    - test-helpers
+    - test-flakiness
+    - test-evidence-review
+    - bug-report
+    - bug-triage
+    - bug-intake
+    - playtest-report
+    - gate-check
+  production:
+    - milestone-review
+    - retrospective
+    - scope-check
+    - skill-test
+    - skill-improve
+    - prototype
+    - localize
+  release:
+    - release-checklist
+    - launch-checklist
+    - team-release
+    - patch-notes
+    - changelog
+    - hotfix
+  creative_content:
+    - content-audit
+    - team-narrative
+    - team-audio
+    - team-level
+    - team-combat
+    - team-polish
+  team_orchestration:
+    - team-qa
+    - team-live-ops
+notes:
+  - Use the dispatch manifest for route-level command selection.
+  - Use the workflow playbooks for backing execution details.

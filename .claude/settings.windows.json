@@ -1,0 +1,32 @@
+{
+  "allow": [
+    "git status",
+    "git diff",
+    "git log",
+    "git branch",
+    "rg",
+    "sed",
+    "pytest",
+    "cmd /c scripts\\validate_studio.cmd"
+  ],
+  "deny": [
+    "rm -rf",
+    "git reset --hard",
+    "git push --force",
+    "direct secret access",
+    "writing outside the current repo without explicit approval"
+  ],
+  "hooks": {
+    "SessionStart": ".claude/hooks/session-start.cmd",
+    "PreToolUse": ".claude/hooks/pre-tool-use.cmd",
+    "PostToolUse": ".claude/hooks/post-tool-use.cmd",
+    "PreCompact": ".claude/hooks/pre-compact.cmd",
+    "Stop": ".claude/hooks/stop.cmd",
+    "SubagentStart": ".claude/hooks/subagent-start.cmd"
+  },
+  "notes": [
+    "Windows settings mirror that keeps command-prompt hook wrappers.",
+    "The source of truth remains the runtime/ and production/ directories.",
+    "The .claude/hooks scripts are mirrors that point back to the canonical runtime docs."
+  ]
+}

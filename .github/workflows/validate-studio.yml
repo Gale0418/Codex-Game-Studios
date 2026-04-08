@@ -1,0 +1,23 @@
+name: validate-studio
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate-macos-linux:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate studio pack
+        run: bash scripts/validate_studio.sh
+
+  validate-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate studio pack
+        run: cmd /c scripts\validate_studio.cmd
