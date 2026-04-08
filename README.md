@@ -44,6 +44,12 @@ Use it when you want Codex to know how to start, split work into waves, and clos
 - Save a short checkpoint after each wave.
 - Keep the shortest safe entry in `references/codex-first.md`.
 
+## 免責聲明
+
+- 這個工作室套件是由 Codex 協助改造與整理的。
+- 它的目標是讓 Codex 可以直接開箱使用、分波運作、輪流監工。
+- 如果你在使用時遇到問題、缺頁、或流程不順，先回報給建立這個倉庫的人，不要直接怪文件自己跑掉 (￣▽￣)"
+
 ## Platform
 
 - macOS/Linux: `settings.macos.json`
