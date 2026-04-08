@@ -11,6 +11,11 @@ Use this skill for Codex-first game-dev work that needs routing, parallel agents
 
 README -> /start -> /project-stage-detect -> /onboard
 
+## Install note
+
+If this skill was installed from GitHub, start with `/start` after Codex reloads skills.
+If the workspace already contains `AGENTS.md`, read it first and then follow the shortest safe entry.
+
 ## Rules
 
 - Read `AGENTS.md` first when it exists.

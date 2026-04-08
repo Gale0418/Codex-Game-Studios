@@ -5,6 +5,32 @@
 Use this pack when Codex needs a game-dev studio flow with clear routing, roles, and verification.
 Use it as the default studio shell for new sessions and new subagents.
 
+## 🚀 安裝方式
+
+如果你想讓別人的 Codex 也能直接用這套工作室，先把這個 GitHub repo 裝成 skill。
+
+1. 打開 repo：`https://github.com/Gale0418/Codex-Game-Studios`
+2. 用你的 Codex skill installer 安裝它
+3. 如果你的環境沒有 installer，就把整個資料夾放進 `~/.codex/skills/codex-game-studios/`
+4. 重新啟動 Codex，讓它重新掃描 skills
+5. 新會話先跑 `/start`
+
+English:
+
+1. Open the repo: `https://github.com/Gale0418/Codex-Game-Studios`
+2. Install it with your Codex skill installer
+3. If you do not have an installer, copy the folder into `~/.codex/skills/codex-game-studios/`
+4. Restart Codex so it rescans skills
+5. Start a new session with `/start`
+
+日本語:
+
+1. この repo を開く: `https://github.com/Gale0418/Codex-Game-Studios`
+2. Codex の skill installer でインストールする
+3. installer がない場合は `~/.codex/skills/codex-game-studios/` に配置する
+4. Codex を再起動して skills を再スキャンする
+5. 新しいセッションでは `/start` から始める
+
 ## 繁體中文
 
 這是一套給 Codex 用的遊戲開發工作室骨架 (｀・ω・´)ゞ  
