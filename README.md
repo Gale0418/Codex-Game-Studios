@@ -5,6 +5,13 @@
 Use this pack when Codex needs a game-dev studio flow with clear routing, roles, and verification.
 Use it as the default studio shell for new sessions and new subagents.
 
+
+<a id="zh-tw"></a>
+
+<p align="center">
+  <a href="#zh-tw">🇹🇼 繁中</a> · <a href="#english">🇺🇸 English</a> · <a href="#ja">🇯🇵 日本語</a>
+</p>
+
 ## 🚀 安裝方式
 
 如果你想讓別人的 Codex 也能直接用這套工作室，先把這個 GitHub repo 裝成 skill。
@@ -15,6 +22,7 @@ Use it as the default studio shell for new sessions and new subagents.
 4. 重新啟動 Codex，讓它重新掃描 skills
 5. 新會話先跑 `/start`
 
+<a id="english"></a>
 English:
 
 1. Open the repo: `https://github.com/Gale0418/Codex-Game-Studios`
@@ -24,6 +32,7 @@ English:
 5. Start a new session with `/start`
 
 ## 🤖 自動判斷模式
+<a id="ja"></a>
 
 如果你不知道該用哪個指令，也可以直接把需求丟給 AI，讓它自己判斷流程並自動往下跑。
 你不用先背 `/start`、`/project-stage-detect`、`/onboard`，因為這套工作室會先看情況，再決定要走哪條 lane。
