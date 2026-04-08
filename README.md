@@ -38,6 +38,34 @@ You do not need to memorize `/start`, `/project-stage-detect`, or `/onboard` fir
 どのコマンドを使えばいいか分からないときは、AI にそのまま依頼して大丈夫です。
 `/start` や `/project-stage-detect` を覚えていなくても、AI が状況を見て安全な流れを選びます。
 
+## 🕹️ 如何呼叫
+
+如果你已經把這個 skill 掛進 Codex，最簡單的用法就是直接丟任務，不必先背流程。
+
+你可以這樣講：
+
+- `請用 codex-game-studios skill 幫我看這個專案`
+- `用工作室模式 review 這個五子棋遊戲`
+- `直接幫我判斷這個任務要不要開多 agent`
+- `幫我用自動判斷模式整理這份 README`
+
+如果 Codex 沒有自動抓到 skill，就補一句：
+
+- `用 codex-game-studios skill`
+- `請以工作室流程處理`
+
+English:
+
+- `Please use the codex-game-studios skill to review this project.`
+- `Use the studio workflow to inspect this game.`
+- `Decide whether this task needs parallel agents.`
+
+日本語:
+
+- `codex-game-studios skill を使ってこのプロジェクトを見てください。`
+- `ワークフローに従ってこのゲームを確認してください。`
+- `このタスクに並列エージェントが必要か判断してください。`
+
 日本語:
 
 1. この repo を開く: `https://github.com/Gale0418/Codex-Game-Studios`

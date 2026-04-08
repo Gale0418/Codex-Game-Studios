@@ -16,6 +16,12 @@ README -> /start -> /project-stage-detect -> /onboard
 If this skill was installed from GitHub, start with `/start` after Codex reloads skills.
 If the workspace already contains `AGENTS.md`, read it first and then follow the shortest safe entry.
 
+## Invocation
+
+If the user asks how to use the skill, explain that they can either:
+- give a task directly and let Codex infer the next safe workflow, or
+- explicitly say `use codex-game-studios skill` to bias the session toward this studio flow.
+
 ## Rules
 
 - Read `AGENTS.md` first when it exists.
