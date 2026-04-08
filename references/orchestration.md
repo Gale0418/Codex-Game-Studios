@@ -19,6 +19,7 @@
 6. Escalate to `architecture`, `QA`, or `release` only when the task needs independent review, not just because more people are available.
 7. Reuse slots wave by wave so finished agents can close and new waves can take over.
 8. Default to `1+1+1`; use `6-slot wave` only after control-plane approval.
+9. Rotate one monitor per wave to check scope drift, handoff quality, and checkpoint hygiene.
 
 ## When to split into subagents
 
@@ -34,6 +35,7 @@
 - Give each agent one lane only.
 - Do not duplicate the same analysis across agents unless you need an independent validation pass.
 - Prefer source files, logs, and observable behavior over guesswork.
+- Let the monitor verify that finished agents were closed before the next wave opens.
 - Close an agent as soon as its handoff is complete so the slot can be reused for the next wave.
 - Never keep a finished agent alive just because the task is still ongoing elsewhere.
 - When the slot limit gets tight, close finished agents first, then open the next wave.

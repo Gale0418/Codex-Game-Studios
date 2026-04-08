@@ -20,6 +20,7 @@ README -> /start -> /project-stage-detect -> /onboard
 - Ask before splitting broad or risky work.
 - Use parallel agents only after the control plane is clear.
 - Keep one owner per lane and one integrator per change.
+- Rotate one monitor per wave so the studio can check its own handoff quality.
 - Work in waves: spawn only the agents you need for the current lane, close finished agents immediately, and reopen new ones only when the next wave starts.
 - Reclaim completed parallel agents before opening new ones if the slot limit is tight.
 - Save a short checkpoint after each wave so the next wave can restart cleanly.

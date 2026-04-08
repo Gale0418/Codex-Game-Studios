@@ -32,6 +32,7 @@
 
 - 廣泛或高風險任務先做控制平面判斷，再決定是否拆 agent。
 - 每條 lane 先指定一個 owner，再視需要加一個 helper，最後由一個 integrator 收尾。
+- 每波要輪值一個 monitor，負責盯 scope、handoff 品質、與完成 agent 是否有即時收回。
 - 以 wave 為單位工作：只開本波需要的 agent，完成的 agent 要立刻關閉，槽位緊張時先回收完成分身再開下一波。
 - 每波結束先留短 checkpoint，讓下一波可以乾淨接手。
 - 優先保留窄 diff，不要為了順手而大改無關區塊。

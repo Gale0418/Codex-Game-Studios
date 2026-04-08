@@ -24,3 +24,7 @@
 ## Verification
 
 - [status]
+
+## Monitor Notes
+
+- [scope drift / handoff quality / close status]

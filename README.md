@@ -39,6 +39,7 @@ Use it when you want Codex to know how to start, split work into waves, and clos
 
 - Keep the wave goal explicit before opening subagents.
 - Use `references/multi-agent-sop.md` as the default rotation model.
+- Rotate one monitor per wave so the studio can self-check and self-correct.
 - Close finished agents immediately.
 - Save a short checkpoint after each wave.
 - Keep the shortest safe entry in `references/codex-first.md`.

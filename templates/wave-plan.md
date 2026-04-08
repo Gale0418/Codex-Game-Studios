@@ -24,6 +24,10 @@
 - Slot 5: [role]
 - Slot 6: [role]
 
+## Monitor
+
+- [rotating monitor]
+
 ## Wave 4 - Polish
 
 - [follow-up]

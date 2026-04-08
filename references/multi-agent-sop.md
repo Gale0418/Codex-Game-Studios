@@ -13,14 +13,17 @@
 - `owner`: drives the lane
 - `helper`: adds one narrow supporting pass
 - `integrator`: closes the changeset
+- `monitor`: rotates between agents to check scope, handoff quality, and checkpoint hygiene
 
 ## Wave rule
 
 1. Write the wave goal before opening agents.
 2. Open only the agents needed for that wave.
-3. Close finished agents immediately.
-4. Save a short checkpoint before the next wave.
-5. Reopen fresh agents only when the next wave starts.
+3. Assign one agent as the monitor for that wave.
+4. The monitor checks scope drift, handoff quality, and whether finished agents were closed.
+5. Close finished agents immediately.
+6. Save a short checkpoint before the next wave.
+7. Reopen fresh agents only when the next wave starts.
 
 ## Required outputs
 
@@ -30,6 +33,7 @@
 - `files`
 - `recommended_next_step`
 - `checkpoint`
+- `monitor_notes`
 
 ## Read order
 
