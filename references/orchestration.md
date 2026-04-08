@@ -18,6 +18,7 @@
 5. Add an engine-specific role only when the engine is known or the work depends on engine behavior.
 6. Escalate to `architecture`, `QA`, or `release` only when the task needs independent review, not just because more people are available.
 7. Reuse slots wave by wave so finished agents can close and new waves can take over.
+8. Default to `1+1+1`; use `6-slot wave` only after control-plane approval.
 
 ## When to split into subagents
 

@@ -19,6 +19,7 @@
 10. `runtime/hook-map.md`
 11. `templates/agent-handoff.md`
 12. `templates/wave-plan.md`
+13. `references/multi-agent-sop.md`
 
 ## 做事順序
 

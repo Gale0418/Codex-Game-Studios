@@ -21,6 +21,7 @@ Use it when you want Codex to know how to start, split work into waves, and clos
 ## Read first
 
 - [references/codex-first.md](references/codex-first.md)
+- [references/multi-agent-sop.md](references/multi-agent-sop.md)
 - `SKILL.md`
 - `AGENTS.md`
 - `references/command-registry.md`
@@ -37,6 +38,7 @@ Use it when you want Codex to know how to start, split work into waves, and clos
 ## Quick Notes
 
 - Keep the wave goal explicit before opening subagents.
+- Use `references/multi-agent-sop.md` as the default rotation model.
 - Close finished agents immediately.
 - Save a short checkpoint after each wave.
 - Keep the shortest safe entry in `references/codex-first.md`.

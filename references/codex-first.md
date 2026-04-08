@@ -6,6 +6,7 @@
 - `SKILL.md`
 - `README.md`
 - `AGENTS.md`
+- `references/multi-agent-sop.md`
 - `references/command-registry.md`
 - `workflows/start.md`
 - `workflows/help.md`

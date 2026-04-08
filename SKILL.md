@@ -29,6 +29,7 @@ README -> /start -> /project-stage-detect -> /onboard
 ## Refs
 
 - `references/codex-first.md` for the shortest reading order.
+- `references/multi-agent-sop.md` for the default wave model.
 - `commands/` for the front door.
 - `workflows/` for the steps.
 - `references/command-registry.md` for the command source of truth.
