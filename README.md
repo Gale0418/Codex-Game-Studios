@@ -60,6 +60,11 @@ Use it when you want Codex to know how to start, split work into waves, and clos
 - macOS/Linux: `bash scripts/validate_studio.sh`
 - Windows: `scripts\\validate_studio.cmd`
 
+## License
+
+- MIT License
+- See [LICENSE](LICENSE)
+
 ## Keep for later
 
 - `commands/` for browsable command entries
