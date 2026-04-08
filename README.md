@@ -23,6 +23,21 @@ English:
 4. Restart Codex so it rescans skills
 5. Start a new session with `/start`
 
+## 🤖 自動判斷模式
+
+如果你不知道該用哪個指令，也可以直接把需求丟給 AI，讓它自己判斷流程並自動往下跑。
+你不用先背 `/start`、`/project-stage-detect`、`/onboard`，因為這套工作室會先看情況，再決定要走哪條 lane。
+
+English:
+
+If you do not know which command to use, just give the request to the AI and let it choose the next safe workflow.
+You do not need to memorize `/start`, `/project-stage-detect`, or `/onboard` first.
+
+日本語:
+
+どのコマンドを使えばいいか分からないときは、AI にそのまま依頼して大丈夫です。
+`/start` や `/project-stage-detect` を覚えていなくても、AI が状況を見て安全な流れを選びます。
+
 日本語:
 
 1. この repo を開く: `https://github.com/Gale0418/Codex-Game-Studios`

@@ -20,6 +20,7 @@ If the workspace already contains `AGENTS.md`, read it first and then follow the
 
 - Read `AGENTS.md` first when it exists.
 - Read `references/codex-first.md` next when you need the shortest safe entry map.
+- If the user does not know the right command, infer the next safe workflow and continue.
 - Start with the smallest file set that answers the task.
 - Classify the task as `intake`, `architecture`, `implementation`, `QA`, `docs`, or `release`.
 - Ask before splitting broad or risky work.
