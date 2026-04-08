@@ -1,24 +1,29 @@
 # Codex Game Studios
 
+> "It ain't perfect, but it's honest work." (´・ω・`)a
+
 Use this pack when Codex needs a game-dev studio flow with clear routing, roles, and verification.
 Use it as the default studio shell for new sessions and new subagents.
 
 ## 繁體中文
 
 這是一套給 Codex 用的遊戲開發工作室骨架 (｀・ω・´)ゞ  
-如果你想讓 Codex 先知道「怎麼開始、怎麼分波次、怎麼收回完成分身」，就從這包開始。
+如果你想讓 Codex 先知道「怎麼開始、怎麼分波次、怎麼收回完成分身」，就從這包開始。  
+說白了，它不是很花俏，但它很誠實，也真的能跑。
 
 ## English
 
 This is a Codex-first game-dev studio shell (￣▽￣)  
-Use it when you want Codex to know how to start, split work into waves, and close finished subagents cleanly.
+Use it when you want Codex to know how to start, split work into waves, and close finished subagents cleanly.  
+It is not fancy, but it is organized enough to keep the studio from falling apart.
 
 ## 日本語
 
 これは Codex 向けのゲーム開発スタジオ用テンプレートです (｀・ω・´)ゞ  
-開始方法、wave の分け方、完了した分身の回収方法をまとめています。
+開始方法、wave の分け方、完了した分身の回収方法をまとめています。  
+完璧ではないけど、少なくとも迷子にはなりにくいはずです。
 
-## Read first
+## 📚 Read First
 
 - [references/codex-first.md](references/codex-first.md)
 - [references/multi-agent-sop.md](references/multi-agent-sop.md)
@@ -28,14 +33,14 @@ Use it when you want Codex to know how to start, split work into waves, and clos
 - `templates/agent-handoff.md`
 - `templates/wave-plan.md`
 
-## Use path
+## 🚦 Use Path
 
 1. Run `/start`
 2. If the state is unclear, run `/project-stage-detect`
 3. If you need a clean handoff, run `/onboard`
 4. Use `/help` when you need the next command
 
-## Quick Notes
+## 🧠 Quick Notes
 
 - Keep the wave goal explicit before opening subagents.
 - Use `references/multi-agent-sop.md` as the default rotation model.
@@ -43,6 +48,7 @@ Use it when you want Codex to know how to start, split work into waves, and clos
 - Close finished agents immediately.
 - Save a short checkpoint after each wave.
 - Keep the shortest safe entry in `references/codex-first.md`.
+- If a wave gets messy, stop and re-route instead of pretending it is fine. That trick never works (￣▽￣)
 
 ## 免責聲明
 
@@ -50,12 +56,12 @@ Use it when you want Codex to know how to start, split work into waves, and clos
 - 它的目標是讓 Codex 可以直接開箱使用、分波運作、輪流監工。
 - 如果你在使用時遇到問題、缺頁、或流程不順，先回報給建立這個倉庫的人，不要直接怪文件自己跑掉 (￣▽￣)"
 
-## Platform
+## 🖥️ Platform
 
 - macOS/Linux: `settings.macos.json`
 - Windows: `settings.windows.json`
 
-## Validation
+## ✅ Validation
 
 - macOS/Linux: `bash scripts/validate_studio.sh`
 - Windows: `scripts\\validate_studio.cmd`
@@ -65,7 +71,7 @@ Use it when you want Codex to know how to start, split work into waves, and clos
 - MIT License
 - See [LICENSE](LICENSE)
 
-## Keep for later
+## 📎 Keep for Later
 
 - `commands/` for browsable command entries
 - `workflows/` for the playbooks
