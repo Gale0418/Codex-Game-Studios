@@ -33,7 +33,7 @@ This is a Codex-first game studio shell for routing, wave-based work, monitoring
 
 - This pack was adapted from the Claude Game Studio concept and structure, then reorganized for Codex.
 - If something feels unclear, let the AI choose the next safe lane.
-- For the shortest safe entry, read `SKILL.md`, `AGENTS.md`, and `references/codex-first.md`.
+- For the shortest safe entry, read `SKILL.md` and `references/codex-first.md`, then add the target workspace `AGENTS.md` only when that workspace provides one.
 
 ## License
 

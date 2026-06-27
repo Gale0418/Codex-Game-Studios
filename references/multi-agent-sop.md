@@ -39,7 +39,7 @@
 
 - `SKILL.md`
 - `references/codex-first.md`
-- `AGENTS.md`
+- target workspace `AGENTS.md` when it exists
 - `references/orchestration.md`
 - `templates/wave-plan.md`
 - `templates/agent-handoff.md`

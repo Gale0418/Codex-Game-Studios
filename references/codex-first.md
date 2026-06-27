@@ -2,10 +2,10 @@
 
 ## Read first
 
-- This is the shortest safe entry: read the first four files, then only expand if the task needs it.
+- Shortest safe repo entry: read the first four repo files below, then expand only if the task needs it.
+- If the target workspace itself contains `AGENTS.md`, read that workspace file before acting.
 - `SKILL.md`
 - `README.md`
-- `AGENTS.md`
 - `references/multi-agent-sop.md`
 - `references/command-registry.md`
 - `workflows/start.md`

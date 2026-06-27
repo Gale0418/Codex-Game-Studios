@@ -3,7 +3,7 @@
 ## Canonical source
 
 - `references/command-registry.md` is the source of truth.
-- This file is a short routing view.
+- This file is a derived routing summary, not a shortened example list.
 
 ## Routing principle
 
@@ -13,14 +13,35 @@
 
 ## Routing map
 
-| Group | Examples | Output |
-| --- | --- | --- |
-| Discovery | `/start`, `/help`, `/project-stage-detect`, `/onboard`, `/adopt` | state, next step |
-| Planning | `/brainstorm`, `/estimate`, `/scope-check`, `/sprint-plan`, `/setup-engine` | plan, risks |
-| Design | `/quick-design`, `/ux-design`, `/art-bible`, `/design-review`, `/design-system` | direction, constraints |
-| Build | `/dev-story`, `/prototype`, `/bug-report`, `/code-review` | patch plan, findings |
-| Verify | `/qa-plan`, `/smoke-check`, `/regression-suite`, `/gate-check` | coverage, verdict |
-| Ship | `/release-checklist`, `/patch-notes`, `/team-release`, `/retrospective` | readiness, handoff |
+### Discovery
+
+- Commands: 
+- Typical output: state, next step
+
+### Planning
+
+- Commands: 
+- Typical output: plan, risks
+
+### Design
+
+- Commands: 
+- Typical output: direction, constraints
+
+### Build
+
+- Commands: 
+- Typical output: patch plan, findings
+
+### Verify
+
+- Commands: 
+- Typical output: coverage, verdict
+
+### Ship
+
+- Commands: 
+- Typical output: readiness, handoff
 
 ## Handoff
 

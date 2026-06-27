@@ -33,7 +33,7 @@
 
 - 這份是從 Claude Game Studio 的概念與結構改造而來，再整理成 Codex 可直接使用的版本。
 - 如果不知道怎麼用，就直接把需求丟給 AI，讓它自己判斷 lane。
-- 最短安全入口請看 `SKILL.md`、`AGENTS.md`、`references/codex-first.md`
+- 最短安全入口請先看 `SKILL.md` 與 `references/codex-first.md`，若目標 workspace 自己有 `AGENTS.md` 再補讀那份即可
 
 ## 授權
 

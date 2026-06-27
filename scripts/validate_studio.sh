@@ -266,27 +266,33 @@ for rel in "${claude_rule_files[@]}"; do
   [ -f "$file" ] || fail "missing .claude rule file: $file"
 done
 
-legacy_refs=$(grep -RIn '/Volumes/MyGame/codex-game-studios/' \
-  "$ROOT/commands" \
-  "$ROOT/references" \
-  "$ROOT/workflows" \
-  "$ROOT/README.md" \
-  "$ROOT/SKILL.md" \
-  "$ROOT/AGENTS.md" \
-  || true)
+legacy_inputs=(
+  "$ROOT/commands"
+  "$ROOT/references"
+  "$ROOT/workflows"
+  "$ROOT/README.md"
+  "$ROOT/SKILL.md"
+)
+if [ -f "$ROOT/AGENTS.md" ]; then
+  legacy_inputs+=("$ROOT/AGENTS.md")
+fi
+legacy_refs=$(grep -RIn '/Volumes/MyGame/codex-game-studios/' "${legacy_inputs[@]}" || true)
 
 if [ -n "$legacy_refs" ]; then
   printf '%s\n' "$legacy_refs" >&2
   fail "legacy absolute links found; use relative paths"
 fi
 
-refs=$(grep -RhoE 'templates/[A-Za-z0-9._-]+' \
-  "$ROOT/SKILL.md" \
-  "$ROOT/AGENTS.md" \
-  "$ROOT/references"/*.md \
-  "$ROOT/workflows"/*.md \
-  "$ROOT/commands"/*.md \
-  | sort -u)
+template_inputs=(
+  "$ROOT/SKILL.md"
+  "$ROOT/references"/*.md
+  "$ROOT/workflows"/*.md
+  "$ROOT/commands"/*.md
+)
+if [ -f "$ROOT/AGENTS.md" ]; then
+  template_inputs+=("$ROOT/AGENTS.md")
+fi
+refs=$(grep -RhoE 'templates/[A-Za-z0-9._-]+' "${template_inputs[@]}" | sort -u)
 
 while IFS= read -r ref; do
   [ -z "$ref" ] && continue

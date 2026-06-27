@@ -83,9 +83,7 @@ $WorkflowNames = @(
   'localize'
 )
 
-$CommandNames = $WorkflowNames + @(
-  'gate-check'
-)
+$CommandNames = $WorkflowNames
 
 $RequiredSections = @(
   'Primary lane'
@@ -211,7 +209,11 @@ foreach ($RelativePath in $ClaudeRuleFiles) {
 
 $LegacyFiles = @()
 $LegacyFiles += Get-ChildItem -Path (Join-Path $Root 'commands'), (Join-Path $Root 'references'), (Join-Path $Root 'workflows') -Recurse -File -ErrorAction SilentlyContinue
-$LegacyFiles += Get-Item -Path (Join-Path $Root 'README.md'), (Join-Path $Root 'SKILL.md'), (Join-Path $Root 'AGENTS.md')
+$LegacyFiles += Get-Item -Path (Join-Path $Root 'README.md'), (Join-Path $Root 'SKILL.md')
+$AgentsPath = Join-Path $Root 'AGENTS.md'
+if (Test-Path $AgentsPath) {
+  $LegacyFiles += Get-Item -Path $AgentsPath
+}
 
 $LegacyMatches = $LegacyFiles | Select-String -Pattern '/Volumes/MyGame/codex-game-studios/' -ErrorAction SilentlyContinue
 if ($LegacyMatches) {
@@ -220,7 +222,10 @@ if ($LegacyMatches) {
 }
 
 $TemplateFiles = @()
-$TemplateFiles += Get-Item -Path (Join-Path $Root 'SKILL.md'), (Join-Path $Root 'AGENTS.md')
+$TemplateFiles += Get-Item -Path (Join-Path $Root 'SKILL.md')
+if (Test-Path $AgentsPath) {
+  $TemplateFiles += Get-Item -Path $AgentsPath
+}
 $TemplateFiles += Get-ChildItem -Path (Join-Path $Root 'references'), (Join-Path $Root 'workflows'), (Join-Path $Root 'commands') -Filter *.md -Recurse -File -ErrorAction SilentlyContinue
 
 $TemplateRefs = $TemplateFiles | Select-String -Pattern 'templates/[A-Za-z0-9._-]+' -AllMatches -ErrorAction SilentlyContinue |

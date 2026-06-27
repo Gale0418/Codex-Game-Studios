@@ -22,7 +22,7 @@
 
 ## Hook model
 
-- `SessionStart`: load `SKILL.md`, `AGENTS.md`, `references/codex-first.md`, stage state, and the smallest usable reference set.
+- `SessionStart`: load `SKILL.md`, `references/codex-first.md`, stage state, the smallest usable reference set, and the target workspace `AGENTS.md` only when that workspace provides one.
 - `PreToolUse`: confirm the action stays inside the current lane and escalate broad or risky steps.
 - `PostToolUse`: record changed files, verification status, and unresolved assumptions.
 - `PreCompact`: reduce the session to stage, lane, risk, checkpoint, and next step.

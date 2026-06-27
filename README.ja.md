@@ -33,7 +33,7 @@
 
 - このパックは Claude Game Studio の概念と構造を元に、Codex 用に再整理したものです。
 - 迷ったら AI にそのまま依頼して、安全な lane を選ばせてください。
-- 最短の安全ルートは `SKILL.md`、`AGENTS.md`、`references/codex-first.md` にあります。
+- 最短の安全ルートは `SKILL.md` と `references/codex-first.md` です。対象 workspace 側に `AGENTS.md` がある場合だけ、そのファイルを追加で読んでください。
 
 ## ライセンス
 

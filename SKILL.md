@@ -14,7 +14,7 @@ README -> /start -> /project-stage-detect -> /onboard
 ## Install note
 
 If this skill was installed from GitHub, start with `/start` after Codex reloads skills.
-If the workspace already contains `AGENTS.md`, read it first and then follow the shortest safe entry.
+If the target workspace already contains `AGENTS.md`, read that workspace file first and then follow the shortest safe entry.
 
 ## Invocation
 
@@ -24,7 +24,7 @@ If the user asks how to use the skill, explain that they can either:
 
 ## Rules
 
-- Read `AGENTS.md` first when it exists.
+- Read the target workspace `AGENTS.md` first when it exists.
 - Read `references/codex-first.md` next when you need the shortest safe entry map.
 - If the user does not know the right command, infer the next safe workflow and continue.
 - Start with the smallest file set that answers the task.

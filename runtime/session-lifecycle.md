@@ -3,7 +3,7 @@
 ## Start
 
 - Read `SKILL.md`.
-- Read `AGENTS.md`.
+- Read the target workspace `AGENTS.md` when that workspace provides one.
 - Read `production/stage.txt` and `production/active.md`.
 - Load only the references needed for the current lane.
 - Record the active stage, lane, and open risks before making changes.
