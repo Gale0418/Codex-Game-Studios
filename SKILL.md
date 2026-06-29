@@ -7,9 +7,13 @@ description: Use for Codex-first game project work that needs routing, parallel 
 
 Use this skill for Codex-first game-dev work that needs routing, parallel agents, or explicit verification.
 
-## Default path
+## Fast Entry
 
-README -> /start -> /project-stage-detect -> /onboard
+`AGENTS.md` (if the target workspace provides it) -> `SKILL.md` -> `references/codex-first.md` -> one routed workflow
+
+## Full Studio Audit
+
+Use the heavier runtime, registry, and production docs only for broad, risky, release, migration, or refactor work.
 
 ## Install note
 
@@ -25,7 +29,8 @@ If the user asks how to use the skill, explain that they can either:
 ## Rules
 
 - Read the target workspace `AGENTS.md` first when it exists.
-- Read `references/codex-first.md` next when you need the shortest safe entry map.
+- Start with the Fast Entry path, then read `references/codex-first.md` to route into one workflow.
+- Escalate to Full Studio Audit only when the task is broad, risky, release-focused, migration-heavy, or refactor-heavy.
 - If the user does not know the right command, infer the next safe workflow and continue.
 - Start with the smallest file set that answers the task.
 - Classify the task as `intake`, `architecture`, `implementation`, `QA`, `docs`, or `release`.

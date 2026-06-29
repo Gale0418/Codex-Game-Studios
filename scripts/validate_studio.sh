@@ -8,177 +8,7 @@ fail() {
   exit 1
 }
 
-workflow_names=(
-  art-bible
-  architecture-decision
-  architecture-review
-  asset-spec
-  asset-audit
-  adopt
-  balance-check
-  brainstorm
-  bug-intake
-  bug-report
-  bug-triage
-  consistency-check
-  content-audit
-  changelog
-  code-review
-  create-architecture
-  create-control-manifest
-  create-epics
-  create-stories
-  design-review
-  design-system
-  design-systems
-  dev-story
-  gate-check
-  help
-  hotfix
-  launch-checklist
-  map-systems
-  milestone-review
-  onboard
-  estimate
-  regression-suite
-  soak-test
-  qa-plan
-  release-checklist
-  patch-notes
-  perf-profile
-  playtest-report
-  project-stage-detect
-  prototype
-  propagate-design-change
-  retrospective
-  quick-design
-  scope-check
-  smoke-check
-  reverse-document
-  setup-engine
-  review-all-gdds
-  skill-improve
-  skill-test
-  sprint-status
-  story-done
-  story-readiness
-  sprint-plan
-  start
-  team-audio
-  team-combat
-  team-level
-  team-polish
-  team-qa
-  team-release
-  team-live-ops
-  team-ui
-  team-narrative
-  tech-debt
-  test-evidence-review
-  test-flakiness
-  test-helpers
-  test-setup
-  ux-design
-  ux-review
-  localize
-)
-
-command_names=(
-  art-bible
-  architecture-decision
-  architecture-review
-  asset-spec
-  asset-audit
-  adopt
-  balance-check
-  brainstorm
-  bug-intake
-  bug-report
-  bug-triage
-  consistency-check
-  content-audit
-  changelog
-  code-review
-  create-architecture
-  create-control-manifest
-  create-epics
-  create-stories
-  design-review
-  design-system
-  design-systems
-  dev-story
-  gate-check
-  help
-  hotfix
-  launch-checklist
-  map-systems
-  milestone-review
-  onboard
-  estimate
-  regression-suite
-  soak-test
-  qa-plan
-  release-checklist
-  patch-notes
-  perf-profile
-  playtest-report
-  project-stage-detect
-  prototype
-  propagate-design-change
-  retrospective
-  quick-design
-  scope-check
-  smoke-check
-  reverse-document
-  setup-engine
-  review-all-gdds
-  skill-improve
-  skill-test
-  sprint-status
-  story-done
-  story-readiness
-  sprint-plan
-  start
-  team-audio
-  team-combat
-  team-level
-  team-polish
-  team-qa
-  team-release
-  team-live-ops
-  team-ui
-  team-narrative
-  tech-debt
-  test-evidence-review
-  test-flakiness
-  test-helpers
-  test-setup
-  ux-design
-  ux-review
-  localize
-)
-
-required_sections=(
-  "Primary lane"
-  Inputs
-  Steps
-  Outputs
-  "Exit criteria"
-  Template
-)
-
-for name in "${workflow_names[@]}"; do
-  file="$ROOT/workflows/$name.md"
-  [ -f "$file" ] || fail "missing workflow: $file"
-  for section in "${required_sections[@]}"; do
-    grep -q "^## ${section}$" "$file" || fail "missing section ${section} in $file"
-  done
-done
-
-for name in "${command_names[@]}"; do
-  file="$ROOT/commands/$name.md"
-  [ -f "$file" ] || fail "missing command: $file"
-done
+python "$ROOT/scripts/generate_dispatch_manifest.py" --root "$ROOT" --check ||   fail "command-registry.md derived docs or workflow contracts are out of sync"
 
 required_files=(
   references/workflow-entry-contract.md
@@ -195,6 +25,7 @@ required_files=(
   .claude/settings.windows.json
   .claude/statusline.sh
   .claude/statusline.cmd
+  .claude/statusline.ps1
   .github/workflows/validate-studio.yml
   .claude/docs/coordination-rules.md
   .claude/docs/agent-coordination-map.md
@@ -218,9 +49,7 @@ required_files=(
   .claude/hooks/pre-compact.cmd
   .claude/hooks/stop.cmd
   .claude/hooks/subagent-start.cmd
-  .claude/statusline.ps1
   scripts/validate_studio.cmd
-  .github/workflows/validate-studio.yml
 )
 
 for rel in "${required_files[@]}"; do
@@ -279,7 +108,8 @@ fi
 legacy_refs=$(grep -RIn '/Volumes/MyGame/codex-game-studios/' "${legacy_inputs[@]}" || true)
 
 if [ -n "$legacy_refs" ]; then
-  printf '%s\n' "$legacy_refs" >&2
+  printf '%s
+' "$legacy_refs" >&2
   fail "legacy absolute links found; use relative paths"
 fi
 

@@ -1,24 +1,27 @@
 # Codex First Map
 
-## Read first
+## Fast Entry
 
-- Shortest safe repo entry: read the first four repo files below, then expand only if the task needs it.
-- If the target workspace itself contains `AGENTS.md`, read that workspace file before acting.
-- `SKILL.md`
-- `README.md`
-- `references/multi-agent-sop.md`
-- `references/command-registry.md`
-- `workflows/start.md`
-- `workflows/help.md`
-- `workflows/project-stage-detect.md`
-- `workflows/onboard.md`
-- `runtime/dispatch-manifest.md`
-- `runtime/execution-policy.md`
-- `runtime/session-lifecycle.md`
-- `runtime/hook-map.md`
-- `production/stage.txt`
-- `production/active.md`
-- `production/state-schema.md`
+- Read the target workspace `AGENTS.md` only when that workspace provides one.
+- Read `SKILL.md`.
+- Read this file.
+- Choose one route and stop expanding until that workflow needs more context:
+  - vague state or unknown repo posture -> `workflows/start.md`, `workflows/help.md`, `workflows/project-stage-detect.md`, or `workflows/onboard.md`
+  - a direct user command -> open the matching workflow from `references/command-registry.md`
+- Open `references/command-registry.md` only when you need exact command routing or aliases.
+
+## Full Studio Audit
+
+- Use this wider pass only for broad, risky, release, migration, or refactor work.
+- Add these docs when the task needs them:
+  - `references/command-registry.md`
+  - `runtime/dispatch-manifest.md`
+  - `runtime/execution-policy.md`
+  - `runtime/session-lifecycle.md`
+  - `runtime/hook-map.md`
+  - `production/stage.txt`
+  - `production/active.md`
+  - `production/state-schema.md`
 
 ## Optional next
 
@@ -37,10 +40,3 @@
 - `.claude/rules/*`
 - `production/history.md`
 - `production/review-mode.txt`
-
-## When to use the big docs
-
-- Open the command registry when you need exact command routing.
-- Open the roster when you need roles or hierarchy.
-- Open the skeleton when you need a real project layout.
-- Open templates or examples only when you need a specific output shape.

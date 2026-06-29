@@ -8,111 +8,9 @@ function Fail {
   exit 1
 }
 
-$WorkflowNames = @(
-  'art-bible'
-  'architecture-decision'
-  'architecture-review'
-  'asset-spec'
-  'asset-audit'
-  'adopt'
-  'balance-check'
-  'brainstorm'
-  'bug-intake'
-  'bug-report'
-  'bug-triage'
-  'consistency-check'
-  'content-audit'
-  'changelog'
-  'code-review'
-  'create-architecture'
-  'create-control-manifest'
-  'create-epics'
-  'create-stories'
-  'design-review'
-  'design-system'
-  'design-systems'
-  'dev-story'
-  'gate-check'
-  'help'
-  'hotfix'
-  'launch-checklist'
-  'map-systems'
-  'milestone-review'
-  'onboard'
-  'estimate'
-  'regression-suite'
-  'soak-test'
-  'qa-plan'
-  'release-checklist'
-  'patch-notes'
-  'perf-profile'
-  'playtest-report'
-  'project-stage-detect'
-  'prototype'
-  'propagate-design-change'
-  'retrospective'
-  'quick-design'
-  'scope-check'
-  'smoke-check'
-  'reverse-document'
-  'setup-engine'
-  'review-all-gdds'
-  'skill-improve'
-  'skill-test'
-  'sprint-status'
-  'story-done'
-  'story-readiness'
-  'sprint-plan'
-  'start'
-  'team-audio'
-  'team-combat'
-  'team-level'
-  'team-polish'
-  'team-qa'
-  'team-release'
-  'team-live-ops'
-  'team-ui'
-  'team-narrative'
-  'tech-debt'
-  'test-evidence-review'
-  'test-flakiness'
-  'test-helpers'
-  'test-setup'
-  'ux-design'
-  'ux-review'
-  'localize'
-)
-
-$CommandNames = $WorkflowNames
-
-$RequiredSections = @(
-  'Primary lane'
-  'Inputs'
-  'Steps'
-  'Outputs'
-  'Exit criteria'
-  'Template'
-)
-
-foreach ($Name in $WorkflowNames) {
-  $File = Join-Path $Root "workflows\$Name.md"
-  if (-not (Test-Path $File)) {
-    Fail "missing workflow: $File"
-  }
-
-  $Content = Get-Content -Path $File
-  foreach ($Section in $RequiredSections) {
-    if (-not ($Content | Select-String -Pattern ("^## {0}$" -f [regex]::Escape($Section)) -Quiet)) {
-      Fail "missing section $Section in $File"
-    }
-  }
-}
-
-foreach ($Name in $CommandNames) {
-  $File = Join-Path $Root "commands\$Name.md"
-  if (-not (Test-Path $File)) {
-    Fail "missing command: $File"
-  }
+& python (Join-Path $Root 'scripts\generate_dispatch_manifest.py') --root $Root --check
+if ($LASTEXITCODE -ne 0) {
+  Fail 'command-registry.md derived docs or workflow contracts are out of sync'
 }
 
 $RequiredFiles = @(
@@ -155,7 +53,6 @@ $RequiredFiles = @(
   '.claude/hooks/stop.cmd'
   '.claude/hooks/subagent-start.cmd'
   'scripts/validate_studio.cmd'
-  '.github/workflows/validate-studio.yml'
 )
 
 foreach ($RelativePath in $RequiredFiles) {
