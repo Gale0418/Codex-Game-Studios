@@ -1,0 +1,42 @@
+{
+  "name": "codex-game-studios",
+  "version": "0.1.0",
+  "description": "Codex-native orchestration pack for game projects.",
+  "author": {
+    "name": "Gale0418",
+    "email": "Gale0418@users.noreply.github.com",
+    "url": "https://github.com/Gale0418"
+  },
+  "homepage": "https://github.com/Gale0418/Codex-Game-Studios",
+  "repository": "https://github.com/Gale0418/Codex-Game-Studios",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "game-dev",
+    "studio",
+    "qa",
+    "release",
+    "multi-agent"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Codex Game Studios",
+    "shortDescription": "Codex-native orchestration pack for game projects",
+    "longDescription": "Routes Codex-first game development work through lightweight intake, architecture, implementation, QA, docs, and release workflows with explicit handoffs and verification.",
+    "developerName": "Gale0418",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use Codex Game Studios to route this game task.",
+      "Run a studio QA pass for this game project.",
+      "Prepare a release checklist for this game."
+    ],
+    "brandColor": "#14B8A6",
+    "composerIcon": "./assets/icon-small.svg",
+    "logo": "./assets/logo-large.svg",
+    "screenshots": []
+  }
+}

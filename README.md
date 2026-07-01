@@ -17,9 +17,9 @@ This repo is a Codex-first game-dev studio shell with routing, waves, monitors, 
 ## Install
 
 1. Open the repo: `https://github.com/Gale0418/Codex-Game-Studios`
-2. Install it as a Codex skill
-3. If you do not have an installer, copy the folder into `~/.codex/skills/codex-game-studios/`
-4. Restart Codex so it rescans skills
+2. For the full local plugin package, run `python3 _tmp_install_codex_game_studios.py`
+3. If you only need the skill, copy the folder into `~/.codex/skills/codex-game-studios/`
+4. Restart Codex so it rescans skills and plugins
 5. Start a new session with `/start`
 
 ## Use
@@ -39,4 +39,3 @@ This repo is a Codex-first game-dev studio shell with routing, waves, monitors, 
 
 - MIT License
 - See [LICENSE](LICENSE)
-
