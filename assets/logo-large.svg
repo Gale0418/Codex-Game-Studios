@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-labelledby="title desc">
+  <title id="title">Codex Game Studios logo</title>
+  <desc id="desc">A game controller mark with Codex Game Studios text.</desc>
+  <defs>
+    <linearGradient id="markBg" x1="38" y1="36" x2="322" y2="324" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="0.52" stop-color="#172554"/>
+      <stop offset="1" stop-color="#042F2E"/>
+    </linearGradient>
+    <linearGradient id="pad" x1="92" y1="126" x2="274" y2="258" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#B8F7EE"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="88" y1="112" x2="280" y2="256" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#2DD4BF"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#020617" flood-opacity="0.42"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="360" rx="72" fill="#06111F"/>
+  <circle cx="180" cy="180" r="138" fill="url(#markBg)"/>
+  <path d="M73 260c36-96 34-133 85-133h44c51 0 49 37 85 133 8 23-16 43-37 29l-39-28c-10-7-23-11-35-11h-2c-12 0-25 4-35 11l-39 28c-21 14-45-6-37-29Z" fill="url(#pad)" filter="url(#shadow)"/>
+  <path d="M117 138c12-16 26-23 45-23h36c19 0 33 7 45 23" fill="none" stroke="url(#accent)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M123 190H85M104 171v38" stroke="#0F172A" stroke-width="15" stroke-linecap="round"/>
+  <circle cx="226" cy="190" r="11" fill="#0F172A"/>
+  <circle cx="260" cy="190" r="11" fill="#0F172A"/>
+  <circle cx="243" cy="171" r="11" fill="#14B8A6"/>
+  <circle cx="243" cy="209" r="11" fill="#38BDF8"/>
+  <circle cx="141" cy="232" r="18" fill="#0F172A"/>
+  <circle cx="219" cy="232" r="18" fill="#0F172A"/>
+  <circle cx="141" cy="232" r="7" fill="#67E8F9"/>
+  <circle cx="219" cy="232" r="7" fill="#5EEAD4"/>
+  <path d="M394 126h196" stroke="#2DD4BF" stroke-width="8" stroke-linecap="round"/>
+  <text x="390" y="188" fill="#F8FAFC" font-family="Avenir Next, Trebuchet MS, sans-serif" font-size="54" font-weight="800" letter-spacing="1">CODEX GAME</text>
+  <text x="390" y="248" fill="#99F6E4" font-family="Avenir Next, Trebuchet MS, sans-serif" font-size="44" font-weight="700" letter-spacing="8">STUDIOS</text>
+  <path d="M390 282h290" stroke="#1E3A8A" stroke-width="4" stroke-linecap="round"/>
+</svg>

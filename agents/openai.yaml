@@ -1,6 +1,9 @@
 interface:
   display_name: "Codex Game Studios"
   short_description: "Codex-native orchestration pack for game projects"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/logo-large.svg"
+  brand_color: "#14B8A6"
   default_prompt: "Use $codex-game-studios to route this game task through intake, architecture, implementation, QA, and docs passes."
 
 policy:

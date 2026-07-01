@@ -8,7 +8,18 @@ fail() {
   exit 1
 }
 
-python "$ROOT/scripts/generate_dispatch_manifest.py" --root "$ROOT" --check ||   fail "command-registry.md derived docs or workflow contracts are out of sync"
+PYTHON_BIN="${PYTHON:-}"
+if [ -z "$PYTHON_BIN" ]; then
+  if command -v python3 >/dev/null 2>&1; then
+    PYTHON_BIN="python3"
+  elif command -v python >/dev/null 2>&1; then
+    PYTHON_BIN="python"
+  else
+    fail "python3 or python is required to validate derived docs"
+  fi
+fi
+
+"$PYTHON_BIN" "$ROOT/scripts/generate_dispatch_manifest.py" --root "$ROOT" --check ||   fail "command-registry.md derived docs or workflow contracts are out of sync"
 
 required_files=(
   references/workflow-entry-contract.md

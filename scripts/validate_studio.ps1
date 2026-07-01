@@ -8,7 +8,22 @@ function Fail {
   exit 1
 }
 
-& python (Join-Path $Root 'scripts\generate_dispatch_manifest.py') --root $Root --check
+function Resolve-PythonCommand {
+  foreach ($CommandName in @('python3', 'python')) {
+    $Command = Get-Command $CommandName -CommandType Application -ErrorAction SilentlyContinue | Select-Object -First 1
+    if ($Command -and -not [string]::IsNullOrWhiteSpace($Command.Source)) {
+      return $Command.Source
+    }
+  }
+  return $null
+}
+
+$PythonCommand = Resolve-PythonCommand
+if (-not $PythonCommand) {
+  Fail 'python3 or python is required to validate derived docs'
+}
+
+& $PythonCommand (Join-Path $Root 'scripts\generate_dispatch_manifest.py') --root $Root --check
 if ($LASTEXITCODE -ne 0) {
   Fail 'command-registry.md derived docs or workflow contracts are out of sync'
 }
