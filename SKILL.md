@@ -44,9 +44,25 @@ If the user asks how to use the skill, explain that they can either:
 - Prefer narrow diffs over broad refactors.
 - Validate with tests or `scripts/validate_studio.sh` / `scripts/validate_studio.cmd`.
 
+## Language & Communication Protocol
+
+When the user communicates in Traditional Chinese (zh-TW), Codex MUST maintain this language context across all studio workflows:
+
+1. Generate all game design documents (GDD), dev notes, task plans, and comments in **Traditional Chinese (zh-TW)**.
+2. Preserve standard Taiwanese game development terminology (e.g. `場景`, `著色器`, `Sprite Sheet 貼圖`, `影格`, `碰撞區`).
+
+## Game Engine & Asset Workflows
+
+When working with Godot 4.x or Unity game projects:
+
+1. **Godot 4.x (GDScript)**: Check `scenes/*.tscn` and `scripts/*.gd`. Use headless tests (`godot --headless --quit-after 5`) for Verification.
+2. **Sprite Sheet Asset Workflow**: For transparent sprite sheets or video keying, check `Background_remover` integration (`frames[].frameRect`, `extrude`, `padding`) before manual slice adjustments.
+
 ## Refs
 
 - `references/codex-first.md` for the shortest reading order.
+- `references/godot-node-architecture.md` for parsing and editing text-based Godot `.tscn` scene tree files.
+- `references/ai-asset-pipeline.md` for ComfyUI / Sprite Sheet background removal and audio pipelines.
 - `references/multi-agent-sop.md` for the default wave model.
 - `commands/` for the front door.
 - `workflows/` for the steps.
