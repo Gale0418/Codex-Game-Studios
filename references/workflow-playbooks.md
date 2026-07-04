@@ -173,5 +173,4 @@
 - Use the shortest entry that can still answer the task.
 - Use the team lanes when the work spans more than one file or discipline.
 - Use the review and delivery flows when the main output is a decision, gate, or handoff rather than a code patch.
-- After a lane reports back, close it before starting the next wave.
 - After a lane reports back, close it before starting the next wave and write a short checkpoint.
