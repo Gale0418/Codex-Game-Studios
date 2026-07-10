@@ -1,14 +1,52 @@
+import importlib.util
+import shutil
 import subprocess
 import sys
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 
 ROOT = Path(__file__).parents[1]
 PYTHON = sys.executable
+INSTALLER = ROOT / "scripts" / "install.py"
+
+
+def load_installer():
+    spec = importlib.util.spec_from_file_location("codex_game_studios_installer", INSTALLER)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 
 class RegistrySyncTests(unittest.TestCase):
+    def test_installer_stages_icon_bearing_local_plugin(self):
+        installer = load_installer()
+        codex_home = Path(r"D:\MyGame\_tmp_codex_game_studios_installer")
+        shutil.rmtree(codex_home, ignore_errors=True)
+        self.addCleanup(shutil.rmtree, codex_home, ignore_errors=True)
+
+        with patch.object(installer, "get_codex_executable", return_value=None):
+            installer.install(codex_home=codex_home)
+
+        skill_root = codex_home / "skills" / "codex-game-studios"
+        plugin_root = (
+            codex_home
+            / "local-marketplaces"
+            / "codex-game-studios"
+            / "plugins"
+            / "codex-game-studios"
+        )
+        marketplace_manifest = (
+            plugin_root.parent.parent / ".agents" / "plugins" / "marketplace.json"
+        )
+
+        self.assertTrue((skill_root / "SKILL.md").is_file())
+        self.assertTrue((plugin_root / "assets" / "icon-small.svg").is_file())
+        self.assertTrue((plugin_root / "assets" / "logo-large.svg").is_file())
+        self.assertTrue((plugin_root / ".codex-plugin" / "plugin.json").is_file())
+        self.assertTrue(marketplace_manifest.is_file())
+
     def test_generator_script_exists(self):
         self.assertTrue(
             (ROOT / "scripts" / "generate_dispatch_manifest.py").is_file()
@@ -47,6 +85,7 @@ class RegistrySyncTests(unittest.TestCase):
         sh = (ROOT / "scripts" / "validate_studio.sh").read_text(encoding="utf-8")
 
         self.assertIn("scripts/install.py", readme)
+        self.assertIn("Skill and plugin", readme)
         self.assertNotIn("_tmp_install_codex_game_studios.py", readme)
         self.assertNotIn("_tmp_install_codex_game_studios.py", ps1)
         self.assertNotIn("_tmp_install_codex_game_studios.py", sh)

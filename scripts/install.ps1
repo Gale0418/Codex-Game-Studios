@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Installs the Codex Game Studios Skill and Plugin locally.
+    Installs the Codex Game Studios Skill and local plugin package.
 #>
 
 [CmdletBinding()]
@@ -9,25 +9,12 @@ param(
     [switch]$Force
 )
 
-$ErrorActionPreference = 'Stop'
-$ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
-$RepoRoot = Split-Path -Parent $ScriptDir
+$ErrorActionPreference = "Stop"
+$codexHome = Split-Path -Parent (Split-Path -Parent $TargetSkillsDir)
+$env:CODEX_HOME = $codexHome
+$installer = Join-Path $PSScriptRoot "install.py"
 
-Write-Host "Installing Codex Game Studios to: $TargetSkillsDir" -ForegroundColor Cyan
-
-if (-not (Test-Path $TargetSkillsDir)) {
-    New-Item -ItemType Directory -Path $TargetSkillsDir -Force | Out-Null
+& python $installer
+if ($LASTEXITCODE -ne 0) {
+    exit $LASTEXITCODE
 }
-
-$ItemsToCopy = @('SKILL.md', '.codex-plugin', 'agents', 'assets', 'commands', 'examples', 'production', 'references', 'runtime', 'scripts', 'templates', 'workflows')
-
-foreach ($item in $ItemsToCopy) {
-    $source = Join-Path $RepoRoot $item
-    if (Test-Path $source) {
-        $destination = Join-Path $TargetSkillsDir $item
-        Write-Host "  Copying $item -> $destination" -ForegroundColor Gray
-        Copy-Item -Path $source -Destination $destination -Recurse -Force
-    }
-}
-
-Write-Host "Codex Game Studios installed successfully!" -ForegroundColor Green

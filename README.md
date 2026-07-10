@@ -17,7 +17,7 @@ This repo is a Codex-first game-dev studio shell with routing, waves, monitors, 
 ## Install
 
 1. Open the repo: `https://github.com/Gale0418/Codex-Game-Studios`
-2. To install the local Skill payload, run `python scripts/install.py`
+2. To install the local Skill and plugin package, run `python scripts/install.py`
 3. Restart Codex so it rescans skills and plugins
 4. Start a new session with `/start`
 
