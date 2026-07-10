@@ -36,7 +36,6 @@ required_files=(
   assets/icon-small.svg
   assets/logo-large.svg
   skills/codex-game-studios/SKILL.md
-  _tmp_install_codex_game_studios.py
   .claude/settings.json
   .claude/settings.macos.json
   .claude/settings.windows.json

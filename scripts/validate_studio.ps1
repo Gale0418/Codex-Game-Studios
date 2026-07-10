@@ -11,7 +11,8 @@ function Fail {
 function Resolve-PythonCommand {
   foreach ($CommandName in @('python3', 'python')) {
     $Command = Get-Command $CommandName -CommandType Application -ErrorAction SilentlyContinue | Select-Object -First 1
-    if ($Command -and -not [string]::IsNullOrWhiteSpace($Command.Source)) {
+    if ($Command -and -not [string]::IsNullOrWhiteSpace($Command.Source) -and
+        $Command.Source -notmatch 'WindowsApps') {
       return $Command.Source
     }
   }
@@ -43,7 +44,6 @@ $RequiredFiles = @(
   'assets/icon-small.svg'
   'assets/logo-large.svg'
   'skills/codex-game-studios/SKILL.md'
-  '_tmp_install_codex_game_studios.py'
   '.claude/settings.json'
   '.claude/settings.macos.json'
   '.claude/settings.windows.json'

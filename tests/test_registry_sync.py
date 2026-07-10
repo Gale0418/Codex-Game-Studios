@@ -34,7 +34,22 @@ class RegistrySyncTests(unittest.TestCase):
         self.assertNotIn("workflow_names=(", sh)
         self.assertIn("command-registry.md", ps1)
         self.assertIn("command-registry.md", sh)
+        self.assertIn(
+            "$Root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)",
+            ps1,
+        )
+        self.assertNotIn("$Root = Split-Path -Parent $MyInvocation.MyCommand.Path`n`nfunction Fail", ps1)
+        self.assertIn("windowsapps", ps1.lower())
 
+    def test_install_docs_and_validators_do_not_require_temp_installer(self):
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        ps1 = (ROOT / "scripts" / "validate_studio.ps1").read_text(encoding="utf-8")
+        sh = (ROOT / "scripts" / "validate_studio.sh").read_text(encoding="utf-8")
+
+        self.assertIn("scripts/install.py", readme)
+        self.assertNotIn("_tmp_install_codex_game_studios.py", readme)
+        self.assertNotIn("_tmp_install_codex_game_studios.py", ps1)
+        self.assertNotIn("_tmp_install_codex_game_studios.py", sh)
     def test_fast_entry_and_full_audit_are_documented(self):
         skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
         codex_first = (ROOT / "references" / "codex-first.md").read_text(
